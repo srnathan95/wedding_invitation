@@ -125,7 +125,7 @@ a{text-decoration:none;color:inherit}
 @keyframes hpFloat{0%{opacity:0;transform:translateY(100vh) translateX(0) scale(.4)}8%{opacity:.8}50%{opacity:.35;transform:translateY(38vh) translateX(var(--dx,20px)) scale(1)}90%{opacity:.10}100%{opacity:0;transform:translateY(-8vh) translateX(var(--dx,20px)) scale(.6)}}
 
 /* Hero Countdown — Change 5 */
-.hc-countdown{display:flex;align-items:center;gap:6px;justify-content:center;margin-top:14px;pointer-events:none}
+.hc-countdown{display:flex;align-items:center;gap:6px;justify-content:center;margin-top:14px;pointer-events:none;width:100%;flex-basis:100%}
 .hc-cd-unit{display:flex;flex-direction:column;align-items:center;min-width:38px}
 .hc-cd-num{font-family:var(--ff-d);font-weight:400;font-size:clamp(.95rem,2.2vw,1.4rem);color:var(--blush);line-height:1;letter-spacing:.04em;text-shadow:0 2px 16px rgba(200,150,10,.55)}
 .hc-cd-label{font-family:var(--ff-b);font-size:.38rem;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,200,144,.65);margin-top:3px}

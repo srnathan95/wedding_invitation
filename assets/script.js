@@ -389,9 +389,11 @@ initEventsAutoOpen();
 })();
 
 /* ─── 08 ICON MAGNETIC ─────────────────────────── */
-(function initIconMagnetic(){
+function initIconMagnetic(){
   if(isTouch) return;
   document.querySelectorAll('.ev-node').forEach(node=>{
+    if(node._magAttached) return;
+    node._magAttached=true;
     const wrap=node.querySelector('.ev-icon-wrap');
     if(!wrap) return;
     node.addEventListener('mousemove',e=>{
@@ -406,7 +408,8 @@ initEventsAutoOpen();
       wrap.style.animationPlayState='';
     });
   });
-})();
+}
+initIconMagnetic();
 
 /* ─── CURTAIN REVEAL ─────────────────────────────── */
 (function initCurtainReveal(){
@@ -521,4 +524,153 @@ function burstPetals(fromEl){
   const btn=document.getElementById('rsvpWaBtn');
   if(!btn) return;
   btn.addEventListener('click',()=>burstPetals(btn));
+})();
+
+/* ─── CONFIG LOADER ─────────────────────────────── */
+function applyConfig(cfg){
+  function setText(sel,val){
+    if(!val)return;
+    document.querySelectorAll(sel).forEach(el=>{el.textContent=val;});
+  }
+
+  /* Meta */
+  const m=cfg.meta||{};
+  if(m.title)document.title=m.title;
+  const metaDesc=document.querySelector('meta[name="description"]');
+  if(metaDesc&&m.description)metaDesc.setAttribute('content',m.description);
+
+  /* Couple names */
+  const c=cfg.couple||{};
+  if(c.bride){
+    setText('.pl-names span:first-child',c.bride);
+    setText('.hc-bride span',c.bride);
+    setText('.i-bride',c.bride);
+    setText('.st-rv-bride',c.bride);
+  }
+  if(c.groom){
+    setText('.pl-names span:last-child',c.groom);
+    setText('.hc-groom span',c.groom);
+    setText('.i-groom',c.groom);
+    setText('.st-rv-groom',c.groom);
+  }
+  if(c.bride&&c.groom)setText('.ft-names',c.bride+' & '+c.groom);
+  if(c.date&&c.city){
+    const d=new Date(c.date+'T00:00:00');
+    const ds=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})+' · '+c.city;
+    setText('.ft-date',ds);
+  }
+  if(c.hashtag){
+    const tag='#'+c.hashtag;
+    const url=c.instagramHashtagUrl||('https://www.instagram.com/explore/tags/'+c.hashtag+'/');
+    document.querySelectorAll('a[href*="instagram.com/explore/tags/"]').forEach(a=>{a.href=url;a.textContent=tag;});
+    const ttIg=document.querySelector('.tt-ig');
+    if(ttIg)ttIg.innerHTML='Follow our story <a href="'+url+'" target="_blank" rel="noopener">'+tag+'</a>';
+  }
+
+  /* Families */
+  const fam=cfg.families||{};
+  if(fam.bride){
+    const side=document.querySelector('.fam-side:first-child');
+    if(side){
+      const gp=side.querySelector('.fam-gp');
+      const par=side.querySelector('.fam-parents');
+      if(gp)gp.innerHTML='<em>'+fam.bride.relation+' of</em>'+fam.bride.grandparents;
+      if(par)par.innerHTML='<em>'+fam.bride.parentRelation+' of</em>'+fam.bride.parents;
+    }
+  }
+  if(fam.groom){
+    const side=document.querySelector('.fam-side:last-child');
+    if(side){
+      const gp=side.querySelector('.fam-gp');
+      const par=side.querySelector('.fam-parents');
+      if(gp)gp.innerHTML='<em>'+fam.groom.relation+' of</em>'+fam.groom.grandparents;
+      if(par)par.innerHTML='<em>'+fam.groom.parentRelation+' of</em>'+fam.groom.parents;
+    }
+  }
+
+  /* Story */
+  const st=cfg.story||{};
+  if(st.verse)setText('.st-rv-verse',st.verse);
+  if(st.tags&&st.tags.length){
+    const tagsEl=document.querySelector('.st-rv-tags');
+    if(tagsEl)tagsEl.innerHTML=st.tags.map(t=>'<span class="st-rv-tag">'+t+'</span>').join('');
+  }
+
+  /* Events */
+  if(cfg.events&&cfg.events.length){
+    const stage=document.getElementById('evStage');
+    if(stage){
+      stage.innerHTML=cfg.events.map((ev,i)=>{
+        const delay=((i%3)*0.1).toFixed(2)+'s';
+        const heroClass=ev.hero?' ev-node--hero':'';
+        const rowClass=' ev-row'+(ev.row||(i<3?1:2));
+        return '<div class="ev-node'+heroClass+rowClass+' scroll-in" style="--sd:'+delay+'">'+
+          '<div class="ev-icon-wrap"><div class="ev-glow" aria-hidden="true"></div>'+
+          '<img class="ev-icon" src="'+ev.icon+'" alt="'+ev.name+'" /></div>'+
+          '<div class="ev-label"><span class="ev-name">'+ev.name+'</span>'+
+          '<span class="ev-date">'+ev.date+'</span></div>'+
+          '<div class="ev-detail"><p class="ev-venue">'+ev.venue+'</p>'+
+          '<p class="ev-desc">'+ev.description+'</p>'+
+          '<a class="ev-cta" href="'+ev.mapsUrl+'" target="_blank" rel="noopener">\uD83D\uDCCD Open in Maps</a>'+
+          '</div></div>';
+      }).join('');
+      stage.setAttribute('data-ev-count',cfg.events.length);
+      stage.style.setProperty('--ev-cols',Math.min(3,Math.ceil(cfg.events.length/2)));
+      stage.querySelectorAll('.scroll-in').forEach(el=>rIO.observe(el));
+      if(typeof window.initEventsAutoOpen==='function')window.initEventsAutoOpen();
+      initIconMagnetic();
+    }
+  }
+
+  /* Gallery */
+  if(cfg.gallery&&cfg.gallery.length){
+    const grid=document.querySelector('.gal-grid');
+    if(grid){
+      const delays=['.05s','.15s','.25s','.35s','.45s','.55s'];
+      grid.innerHTML=cfg.gallery.map((g,i)=>
+        '<div class="gal-item scroll-in" style="--sd:'+(delays[i]||'.05s')+'">'+
+        '<img src="'+g.src+'" alt="'+g.alt+'" style="width:100%;height:100%;object-fit:cover" />'+
+        '<img class="gal-frame" src="assets/kolam-frame.png" alt="" aria-hidden="true" />'+
+        '</div>'
+      ).join('');
+      grid.querySelectorAll('.scroll-in').forEach(el=>rIO.observe(el));
+    }
+  }
+
+  /* Things to know */
+  const ttk=cfg.thingsToKnow||{};
+  document.querySelectorAll('.tt').forEach(tt=>{
+    const label=tt.querySelector('.tt-l');
+    const val=tt.querySelector('.tt-v');
+    if(!label||!val)return;
+    const l=label.textContent.trim();
+    if(l==='Dress Code'&&ttk.dressCode)val.textContent=ttk.dressCode;
+    if(l==='Venue'&&ttk.venue)val.innerHTML=ttk.venue.replace(/\n/g,'<br>');
+    if(l==='Parking'&&ttk.parking)val.textContent=ttk.parking;
+  });
+
+  /* RSVP */
+  const rsvp=cfg.rsvp||{};
+  if(rsvp.whatsappNumber){
+    const btn=document.getElementById('rsvpWaBtn');
+    if(btn)btn.href='https://wa.me/'+rsvp.whatsappNumber+'?text='+encodeURIComponent(rsvp.message||'');
+  }
+
+  /* Music */
+  const mu=cfg.music||{};
+  if(mu.src){
+    const audio=document.getElementById('bgMusic');
+    if(audio&&!audio.querySelector('source')){
+      const src=document.createElement('source');
+      src.src=mu.src;src.type=mu.type||'audio/mpeg';
+      audio.appendChild(src);
+    }
+  }
+}
+
+(function loadWeddingConfig(){
+  fetch('wedding-config.json')
+    .then(function(r){return r.json();})
+    .then(function(cfg){window.WEDDING_CONFIG=cfg;applyConfig(cfg);})
+    .catch(function(){});
 })();

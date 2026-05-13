@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Swetha & Ramanathan · 12.12.2026",
+    "description": "Swetha weds Ramanathan — 12 December 2026, Chennai. Join us for our sacred celebration."
+  },
+
+  "couple": {
+    "bride": "Swetha",
+    "groom": "Ramanathan",
+    "date": "2026-12-12",
+    "city": "Chennai",
+    "hashtag": "SwethaWedsRamanathan",
+    "instagramHashtagUrl": "https://www.instagram.com/explore/tags/SwethaWedsRamanathan/"
+  },
+
+  "families": {
+    "bride": {
+      "relation": "Granddaughter",
+      "grandparents": "Late Mr. & Mrs. K. Subramaniam",
+      "parentRelation": "Daughter",
+      "parents": "Mr. & Mrs. Suresh Iyer"
+    },
+    "groom": {
+      "relation": "Grandson",
+      "grandparents": "Late Mr. & Mrs. V. Krishnaswamy",
+      "parentRelation": "Son",
+      "parents": "Mr. & Mrs. Ramesh Nair"
+    }
+  },
+
+  "story": {
+    "verse": "Two souls, one sacred thread, a lifetime of grace.",
+    "tags": ["Temple mornings", "Filter coffee", "Jasmine & gold", "Forever & always"]
+  },
+
+  "events": [
+    {
+      "id": "mehendi",
+      "name": "Mehendi",
+      "date": "11 Dec · 3:00 PM",
+      "venue": "Garden Pavilion",
+      "description": "Henna, jasmine, folk music and afternoon warmth.",
+      "mapsUrl": "https://maps.google.com/?q=Garden+Pavilion+Chennai",
+      "icon": "assets/icon-mehendi.png",
+      "row": 1
+    },
+    {
+      "id": "haldi",
+      "name": "Haldi",
+      "date": "11 Dec · 9:00 AM",
+      "venue": "The Mandapam",
+      "description": "Turmeric, coconut water, mango leaves and laughter.",
+      "mapsUrl": "https://maps.google.com/?q=The+Mandapam+Chennai",
+      "icon": "assets/icon-haldi.png",
+      "row": 1
+    },
+    {
+      "id": "cocktail",
+      "name": "Cocktail",
+      "date": "11 Dec · 7:00 PM",
+      "venue": "The Terrace",
+      "description": "Fresh coconut, mocktails and a night breeze.",
+      "mapsUrl": "https://maps.google.com/?q=The+Terrace+Chennai",
+      "icon": "assets/icon-cocktail.png",
+      "row": 1
+    },
+    {
+      "id": "sagan",
+      "name": "Sagan",
+      "date": "11 Dec · 5:00 PM",
+      "venue": "Family Hall",
+      "description": "Sacred engagement ceremony with family blessings.",
+      "mapsUrl": "https://maps.google.com/?q=Family+Hall+Chennai",
+      "icon": "assets/icon-sagan.png",
+      "row": 2
+    },
+    {
+      "id": "kalyanam",
+      "name": "Kalyanam",
+      "date": "12 Dec · 8:00 AM",
+      "venue": "The Grand Mandapam",
+      "description": "The sacred Saptapadi — seven steps, one lifetime.",
+      "mapsUrl": "https://maps.google.com/?q=Grand+Mandapam+Chennai",
+      "icon": "assets/icon-shaadi.png",
+      "hero": true,
+      "row": 2
+    },
+    {
+      "id": "reception",
+      "name": "Reception",
+      "date": "12 Dec · 7:00 PM",
+      "venue": "Grand Ballroom",
+      "description": "Celebrate under the stars with a feast fit for royalty.",
+      "mapsUrl": "https://maps.google.com/?q=Grand+Ballroom+Chennai",
+      "icon": "assets/icon-reception.png",
+      "row": 2
+    }
+  ],
+
+  "thingsToKnow": {
+    "dressCode": "Traditional / Ethnic",
+    "venue": "Kapaleeshwarar Temple\nChennai",
+    "parking": "Available on-site"
+  },
+
+  "gallery": [
+    { "src": "assets/photo1.jpg", "alt": "Swetha & Ramanathan" },
+    { "src": "assets/photo2.jpg", "alt": "Swetha & Ramanathan" },
+    { "src": "assets/photo3.png", "alt": "Swetha & Ramanathan" },
+    { "src": "assets/photo4.png", "alt": "Swetha & Ramanathan" }
+  ],
+
+  "rsvp": {
+    "whatsappNumber": "919999999999",
+    "message": "Hi Swetha & Ramanathan! I would be honoured to join your celebration!"
+  },
+
+  "music": {
+    "src": "",
+    "type": "audio/mpeg"
+  }
+}
