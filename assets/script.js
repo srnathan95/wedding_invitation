@@ -567,6 +567,15 @@ function applyConfig(cfg){
     if(ttIg)ttIg.innerHTML='Follow our story <a href="'+url+'" target="_blank" rel="noopener">'+tag+'</a>';
   }
 
+  /* Invite static texts */
+  const inv=cfg.invite||{};
+  if(inv.blessing){
+    const el=document.querySelector('.i-bless');
+    if(el)el.innerHTML=inv.blessing.replace(/\n/g,'<br>');
+  }
+  if(inv.label)setText('.i-label',inv.label);
+  if(inv.close)setText('.i-close',inv.close);
+
   /* Families */
   const fam=cfg.families||{};
   if(fam.bride){
@@ -655,6 +664,14 @@ function applyConfig(cfg){
     const btn=document.getElementById('rsvpWaBtn');
     if(btn)btn.href='https://wa.me/'+rsvp.whatsappNumber+'?text='+encodeURIComponent(rsvp.message||'');
   }
+  if(rsvp.eyeText)setText('.rsvp-eye',rsvp.eyeText);
+  if(rsvp.heading){
+    const h=document.querySelector('.rsvp-heading');
+    if(h)h.innerHTML=rsvp.heading;
+  }
+  if(rsvp.body)setText('.rsvp-sub',rsvp.body);
+  if(rsvp.buttonText)setText('.rsvp-btn-text',rsvp.buttonText);
+  if(rsvp.postscript)setText('.rsvp-ps',rsvp.postscript);
 
   /* Music */
   const mu=cfg.music||{};

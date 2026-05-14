@@ -28,6 +28,7 @@
 ════════════════════════════════════════════════════════════ */
 
 :root{
+  color-scheme:only light;
   --rose:#C84060;--blush:#E8C890;--gold:#C8960A;--ivory:#F8F2E4;
   --cream:#F2EAD4;--sage:#6B8E7A;--deep:#2E0C0C;--coral:#6E1E1E;
   --ff-d:'Cinzel',Georgia,serif;

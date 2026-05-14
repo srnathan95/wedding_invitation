@@ -28,6 +28,12 @@
     }
   },
 
+  "invite": {
+    "blessing": "With the blessings of the Almighty\nand the love of our families",
+    "label": "Together we invite you to celebrate",
+    "close": "On the following auspicious occasions"
+  },
+
   "story": {
     "verse": "Two souls, one sacred thread, a lifetime of grace.",
     "tags": ["Temple mornings", "Filter coffee", "Jasmine & gold", "Forever & always"]
@@ -112,7 +118,12 @@
 
   "rsvp": {
     "whatsappNumber": "919999999999",
-    "message": "Hi Swetha & Ramanathan! I would be honoured to join your celebration!"
+    "message": "Hi Swetha & Ramanathan! I would be honoured to join your celebration!",
+    "eyeText": "Join the Celebration",
+    "heading": "Will you <em>join us?</em>",
+    "body": "We have lit the kuthuvillakku, spread the kolam, and saved a seat for you in our mandapam. Come celebrate as we begin this sacred and joyful chapter of our lives.",
+    "buttonText": "Yes, we will be there 🙏",
+    "postscript": "You will be redirected to WhatsApp to confirm your attendance."
   },
 
   "music": {
