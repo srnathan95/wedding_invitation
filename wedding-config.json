@@ -16,9 +16,9 @@
   "families": {
     "bride": {
       "relation": "Granddaughter",
-      "grandparents": "Late Mr. & Mrs. K. Subramaniam",
+      "grandparents": "K Vaitheeswaran & J Rukmani",
       "parentRelation": "Daughter",
-      "parents": "Mr. & Mrs. Suresh Iyer"
+      "parents": "TV Baskar"
     },
     "groom": {
       "relation": "Grandson",
@@ -29,7 +29,7 @@
   },
 
   "invite": {
-    "blessing": "With the blessings of the Almighty\nand the love of our families",
+    "blessing": "With the blessings of the Lord Shiva\nand the love of our families",
     "label": "Together we invite you to celebrate",
     "close": "On the following auspicious occasions"
   },
@@ -41,62 +41,42 @@
 
   "events": [
     {
-      "id": "mehendi",
-      "name": "Mehendi",
-      "date": "11 Dec · 3:00 PM",
-      "venue": "Garden Pavilion",
-      "description": "Henna, jasmine, folk music and afternoon warmth.",
+      "id": "mapillaippu",
+      "name": "Mapillai alaipu & Ponn alaipu",
+      "date": "19 Nov · 6:00 PM",
+      "venue": "Raja Marriage hall",
+      "description": "Mapillai alaipu and ponn alaipu with folk music.",
       "mapsUrl": "https://maps.google.com/?q=Garden+Pavilion+Chennai",
       "icon": "assets/icon-mehendi.png",
       "row": 1
     },
     {
-      "id": "haldi",
-      "name": "Haldi",
-      "date": "11 Dec · 9:00 AM",
-      "venue": "The Mandapam",
-      "description": "Turmeric, coconut water, mango leaves and laughter.",
-      "mapsUrl": "https://maps.google.com/?q=The+Mandapam+Chennai",
-      "icon": "assets/icon-haldi.png",
-      "row": 1
-    },
-    {
-      "id": "cocktail",
-      "name": "Cocktail",
-      "date": "11 Dec · 7:00 PM",
-      "venue": "The Terrace",
-      "description": "Fresh coconut, mocktails and a night breeze.",
-      "mapsUrl": "https://maps.google.com/?q=The+Terrace+Chennai",
-      "icon": "assets/icon-cocktail.png",
-      "row": 1
-    },
-    {
-      "id": "sagan",
-      "name": "Sagan",
-      "date": "11 Dec · 5:00 PM",
-      "venue": "Family Hall",
-      "description": "Sacred engagement ceremony with family blessings.",
-      "mapsUrl": "https://maps.google.com/?q=Family+Hall+Chennai",
-      "icon": "assets/icon-sagan.png",
-      "row": 2
-    },
-    {
       "id": "kalyanam",
       "name": "Kalyanam",
-      "date": "12 Dec · 8:00 AM",
-      "venue": "The Grand Mandapam",
+      "date": "20 Nov · 9:00 AM",
+      "venue": "Raja Marriage hall",
       "description": "The sacred Saptapadi — seven steps, one lifetime.",
       "mapsUrl": "https://maps.google.com/?q=Grand+Mandapam+Chennai",
       "icon": "assets/icon-shaadi.png",
       "hero": true,
-      "row": 2
+      "row": 1
     },
     {
       "id": "reception",
       "name": "Reception",
-      "date": "12 Dec · 7:00 PM",
-      "venue": "Grand Ballroom",
+      "date": "20 Nov · 6:30 PM",
+      "venue": "Raja Marriage hall",
       "description": "Celebrate under the stars with a feast fit for royalty.",
+      "mapsUrl": "https://maps.google.com/?q=Grand+Ballroom+Chennai",
+      "icon": "assets/icon-reception.png",
+      "row": 2
+    },
+    {
+      "id": "maruveedu",
+      "name": "Maruveedu",
+      "date": "21 Nov · 10:00 AM",
+      "venue": "Raja Marriage hall",
+      "description": "Thanksgiving for relatives and friends by Groom.",
       "mapsUrl": "https://maps.google.com/?q=Grand+Ballroom+Chennai",
       "icon": "assets/icon-reception.png",
       "row": 2
