@@ -93,9 +93,9 @@ a{text-decoration:none;color:inherit}
 #nav,#nav.sc,.mobile-menu{display:none!important}
 
 /* 03 HERO */
-.hero-wrap{position:relative;height:230vh}
-@media(max-width:767px){.hero-wrap{height:205vh}}
-@media(min-width:1400px){.hero-wrap{height:260vh}}
+.hero-wrap{position:relative;height:150vh}
+@media(max-width:767px){.hero-wrap{height:130vh}}
+@media(min-width:1400px){.hero-wrap{height:170vh}}
 @media(prefers-reduced-motion:reduce){.hero-wrap{height:100svh}}
 .hero-pin{position:sticky;top:0;height:100svh;min-height:600px;overflow:hidden}
 @media(prefers-reduced-motion:reduce){.hero-pin{position:relative}}
