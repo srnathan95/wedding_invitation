@@ -47,7 +47,7 @@
       "venue": "Raja Marriage hall",
       "description": "Mapillai alaipu and ponn alaipu with folk music.",
       "mapsUrl": "https://maps.google.com/?q=Garden+Pavilion+Chennai",
-      "icon": "assets/icon-mehendi.png",
+      "icon": "assets/temple/icon-mehendi.png",
       "row": 1
     },
     {
@@ -57,7 +57,7 @@
       "venue": "Raja Marriage hall",
       "description": "The sacred Saptapadi — seven steps, one lifetime.",
       "mapsUrl": "https://maps.google.com/?q=Grand+Mandapam+Chennai",
-      "icon": "assets/icon-shaadi.png",
+      "icon": "assets/temple/icon-shaadi.png",
       "hero": true,
       "row": 1
     },
@@ -68,7 +68,7 @@
       "venue": "Raja Marriage hall",
       "description": "Celebrate under the stars with a feast fit for royalty.",
       "mapsUrl": "https://maps.google.com/?q=Grand+Ballroom+Chennai",
-      "icon": "assets/icon-reception.png",
+      "icon": "assets/temple/icon-reception.png",
       "row": 2
     },
     {
@@ -78,7 +78,7 @@
       "venue": "Raja Marriage hall",
       "description": "Thanksgiving for relatives and friends by Groom.",
       "mapsUrl": "https://maps.google.com/?q=Grand+Ballroom+Chennai",
-      "icon": "assets/icon-reception.png",
+      "icon": "assets/temple/icon-reception.png",
       "row": 2
     }
   ],
@@ -90,10 +90,10 @@
   },
 
   "gallery": [
-    { "src": "assets/photo1.jpg", "alt": "Swetha & Ramanathan" },
-    { "src": "assets/photo2.jpg", "alt": "Swetha & Ramanathan" },
-    { "src": "assets/photo3.png", "alt": "Swetha & Ramanathan" },
-    { "src": "assets/photo4.png", "alt": "Swetha & Ramanathan" }
+    { "src": "assets/temple/photo1.jpg", "alt": "Swetha & Ramanathan" },
+    { "src": "assets/temple/photo2.jpg", "alt": "Swetha & Ramanathan" },
+    { "src": "assets/temple/photo3.png", "alt": "Swetha & Ramanathan" },
+    { "src": "assets/temple/photo4.png", "alt": "Swetha & Ramanathan" }
   ],
 
   "rsvp": {
