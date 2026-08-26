@@ -165,7 +165,7 @@ class Petals{
     this.el=document.getElementById(id);
     this.max=opts.max||7;
     this.rate=opts.rate||1400;
-    this.src='assets/elements/Element 2.png';
+    this.src='assets/temple/elements/Element 2.png';
     this.active=false;this.pool=new Set();this._iv=null;
   }
   spawn(){
@@ -422,7 +422,39 @@ initIconMagnetic();
   const reveal=document.getElementById('stReveal');
   const petalsEl=document.getElementById('stPetals');
   if(!section||!stage||!bride||!curtL||!curtR) return;
-  let seqDone=false,openEnabled=false,revealed=false,lastP=0;
+  let seqDone=false,openEnabled=false,revealed=false;
+  let displayP=0,targetP=0,autoOpening=false;
+  let smoothRAF=null,autoOpenRAF=null;
+
+  function easeInOutQuint(t){
+    return t<0.5?16*t*t*t*t*t:1-Math.pow(-2*t+2,5)/2;
+  }
+
+  function curtainEase(p){
+    return p<1?1-Math.pow(1-p,2.35):1;
+  }
+
+  function startSmoothLoop(){
+    if(smoothRAF) return;
+    function frame(){
+      const diff=targetP-displayP;
+      if(Math.abs(diff)>0.0006){
+        displayP+=diff*(autoOpening?0.055:0.16);
+        renderProgress(displayP);
+        smoothRAF=requestAnimationFrame(frame);
+      }else{
+        displayP=targetP;
+        renderProgress(displayP);
+        smoothRAF=null;
+      }
+    }
+    smoothRAF=requestAnimationFrame(frame);
+  }
+
+  function stopAutoOpen(){
+    if(autoOpenRAF){cancelAnimationFrame(autoOpenRAF);autoOpenRAF=null;}
+    autoOpening=false;
+  }
 
   function spawnPetal(){
     if(!petalsEl) return;
@@ -454,8 +486,41 @@ initIconMagnetic();
     },735);
     setTimeout(()=>{
       bride.classList.remove('st-tension');groom.classList.remove('st-tension');
-      openEnabled=true;applyProgress(getCurtainProgress());
+      enableCurtainOpen();
     },1255);
+  }
+
+  function enableCurtainOpen(){
+    openEnabled=true;
+    targetP=getCurtainProgress();
+    displayP=targetP;
+    renderProgress(displayP);
+    const r=section.getBoundingClientRect();
+    if(targetP<0.12&&r.top<window.innerHeight*0.92&&r.bottom>0) autoOpenCurtains(targetP);
+  }
+
+  function autoOpenCurtains(fromP){
+    stopAutoOpen();
+    autoOpening=true;
+    targetP=fromP;
+    displayP=fromP;
+    const pause=650;
+    const dur=3400;
+    const t0=performance.now();
+    function drive(now){
+      const elapsed=now-t0;
+      if(elapsed<pause){
+        autoOpenRAF=requestAnimationFrame(drive);
+        startSmoothLoop();
+        return;
+      }
+      const t=Math.min(1,(elapsed-pause)/dur);
+      targetP=fromP+(1-fromP)*easeInOutQuint(t);
+      startSmoothLoop();
+      if(t<1) autoOpenRAF=requestAnimationFrame(drive);
+      else{autoOpenRAF=null;autoOpening=false;}
+    }
+    autoOpenRAF=requestAnimationFrame(drive);
   }
 
   function getCurtainProgress(){
@@ -466,30 +531,44 @@ initIconMagnetic();
     return Math.min(1,Math.max(0,(start-r.top)/range));
   }
 
-  function applyProgress(p){
-    if(Math.abs(p-lastP)<0.002) return;
-    lastP=p;
-    const eased=p<1?1-Math.pow(1-p,3.2):1;
+  function renderProgress(p){
+    const eased=curtainEase(p);
     curtL.style.transform=`translateX(-${(eased*100).toFixed(2)}%)`;
     curtR.style.transform=`translateX(${(eased*100).toFixed(2)}%)`;
-    // Growing drop-shadow as curtains part — physical weight
     curtL.style.filter=`drop-shadow(${(eased*24).toFixed(1)}px 0 30px rgba(26,12,46,${(eased*.28).toFixed(2)}))`;
     curtR.style.filter=`drop-shadow(-${(eased*24).toFixed(1)}px 0 30px rgba(26,12,46,${(eased*.28).toFixed(2)}))`;
     const drift=eased*26;const sc=1-eased*.034;
     bride.style.transform=`translateX(-${drift.toFixed(1)}px) scale(${sc.toFixed(3)})`;
     groom.style.transform=`translateX(${drift.toFixed(1)}px) scale(${sc.toFixed(3)})`;
-    if(eased>=0.68&&!revealed){
+    if(eased>=0.68&&!revealed&&reveal){
       revealed=true;reveal.classList.add('revealed');
       let n=0;
       const iv=setInterval(()=>{spawnPetal();if(++n>=28)clearInterval(iv);},140);
     }
   }
-  window.addEventListener('scroll',()=>applyProgress(getCurtainProgress()),{passive:true});
+
+  function setScrollTarget(){
+    targetP=getCurtainProgress();
+    startSmoothLoop();
+  }
+  window.addEventListener('scroll',()=>{
+    if(!openEnabled) return;
+    stopAutoOpen();
+    setScrollTarget();
+  },{passive:true});
   const io=new IntersectionObserver(entries=>{
     if(entries[0].isIntersecting&&entries[0].intersectionRatio>=0.20){runSequence();io.disconnect();}
-  },{threshold:[0.20]});
+  },{threshold:[0,0.20]});
   io.observe(section);
-  let rTO;window.addEventListener('resize',()=>{clearTimeout(rTO);rTO=setTimeout(()=>applyProgress(getCurtainProgress()),150);});
+  // content-visibility can delay the first IO callback — verify on load/scroll
+  function checkStoryVisible(){
+    const r=section.getBoundingClientRect();
+    const visible=Math.min(r.bottom,window.innerHeight)-Math.max(r.top,0);
+    if(visible>=section.offsetHeight*0.20) runSequence();
+  }
+  if(document.readyState==='complete') checkStoryVisible();
+  else window.addEventListener('load',checkStoryVisible,{once:true});
+  let rTO;window.addEventListener('resize',()=>{clearTimeout(rTO);rTO=setTimeout(setScrollTarget,150);});
 })();
 
 /* ─── 11 ASHOKA BURST ───────────────────────────── */
@@ -497,7 +576,7 @@ function burstPetals(fromEl){
   const r=fromEl.getBoundingClientRect();
   const cx=r.left+r.width/2;
   const cy=r.top+r.height/2;
-  const src='assets/elements/Element 2.png';
+  const src='assets/temple/elements/Element 2.png';
   for(let i=0;i<22;i++){
     const el=document.createElement('div');
     el.className='burst-p';
@@ -639,7 +718,7 @@ function applyConfig(cfg){
       grid.innerHTML=cfg.gallery.map((g,i)=>
         '<div class="gal-item scroll-in" style="--sd:'+(delays[i]||'.05s')+'">'+
         '<img src="'+g.src+'" alt="'+g.alt+'" style="width:100%;height:100%;object-fit:cover" />'+
-        '<img class="gal-frame" src="assets/kolam-frame.png" alt="" aria-hidden="true" />'+
+        '<img class="gal-frame" src="assets/temple/kolam-frame.png" alt="" aria-hidden="true" />'+
         '</div>'
       ).join('');
       grid.querySelectorAll('.scroll-in').forEach(el=>rIO.observe(el));
