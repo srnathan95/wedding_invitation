@@ -92,8 +92,8 @@
   "gallery": [
     { "src": "assets/temple/photo1.jpg", "alt": "Swetha & Ramanathan" },
     { "src": "assets/temple/photo2.jpg", "alt": "Swetha & Ramanathan" },
-    { "src": "assets/temple/photo3.png", "alt": "Swetha & Ramanathan" },
-    { "src": "assets/temple/photo4.png", "alt": "Swetha & Ramanathan" }
+    { "src": "assets/temple/photo3.jpg", "alt": "Swetha & Ramanathan" },
+    { "src": "assets/temple/photo4.jpg", "alt": "Swetha & Ramanathan" }
   ],
 
   "rsvp": {
