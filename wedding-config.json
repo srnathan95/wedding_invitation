@@ -36,7 +36,7 @@
 
   "story": {
     "verse": "Two souls, one sacred thread, a lifetime of grace.",
-    "tags": ["Temple mornings", "Filter coffee", "Jasmine & gold", "Forever & always"]
+    "tags": ["Temple mornings", "Filter coffee", "Travel and fun", "Forever & always"]
   },
 
   "events": [
@@ -85,19 +85,19 @@
 
   "thingsToKnow": {
     "dressCode": "Traditional / Ethnic",
-    "venue": "Kapaleeshwarar Temple\nChennai",
+    "venue": "Raja Mahala\nTirunelveli",
     "parking": "Available on-site"
   },
 
   "gallery": [
     { "src": "assets/temple/photo1.jpg", "alt": "Swetha & Ramanathan" },
     { "src": "assets/temple/photo2.jpg", "alt": "Swetha & Ramanathan" },
-    { "src": "assets/temple/photo3.png", "alt": "Swetha & Ramanathan" },
-    { "src": "assets/temple/photo4.png", "alt": "Swetha & Ramanathan" }
+    { "src": "assets/temple/photo3.jpg", "alt": "Swetha & Ramanathan" },
+    { "src": "assets/temple/photo4.jpg", "alt": "Swetha & Ramanathan" }
   ],
 
   "rsvp": {
-    "whatsappNumber": "919999999999",
+    "whatsappNumber": "919487713286",
     "message": "Hi Swetha & Ramanathan! I would be honoured to join your celebration!",
     "eyeText": "Join the Celebration",
     "heading": "Will you <em>join us?</em>",
