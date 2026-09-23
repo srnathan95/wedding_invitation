@@ -644,6 +644,13 @@ function applyConfig(cfg){
     document.querySelectorAll('a[href*="instagram.com/explore/tags/"]').forEach(a=>{a.href=url;a.textContent=tag;});
     const ttIg=document.querySelector('.tt-ig');
     if(ttIg)ttIg.innerHTML='Follow our story <a href="'+url+'" target="_blank" rel="noopener">'+tag+'</a>';
+    document.querySelectorAll('.tt').forEach(tt=>{
+      const label=tt.querySelector('.tt-l');
+      if(!label||label.textContent.trim()!=='Hashtag')return;
+      const a=tt.querySelector('.tt-v a');
+      if(a){a.href=url;a.textContent=tag;}
+      else{const val=tt.querySelector('.tt-v');if(val)val.textContent=tag;}
+    });
   }
 
   /* Invite static texts */
