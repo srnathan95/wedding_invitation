@@ -81,13 +81,6 @@
 <div class="c-ring" id="cRing"></div>
 <div class="c-dot"  id="cDot"></div>
 
-<!-- ══ MUSIC TOGGLE ══════════════════════════════════════ -->
-<button class="music-btn" id="musicBtn" aria-label="Toggle music">🎵</button>
-<audio id="bgMusic" loop preload="none">
-  <!-- Replace with your own music file -->
-  <!-- <source src="assets/temple/music.mp3" type="audio/mpeg"> -->
-</audio>
-
 <!-- ══ HERO ══════════════════════════════════════════════ -->
 <div class="hero-wrap" id="heroWrap">
   <div class="hero-pin" id="heroPin">
@@ -150,8 +143,10 @@
 
     <!-- Scroll nudge -->
     <div class="scroll-nudge" id="scrollNudge" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="sn-line"><div class="sn-dot"></div></div>
+      <span>Scroll down</span>
+      <svg class="sn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 3v9M4.5 8.5 8 12l3.5-3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
 
     <!-- Petal canvas -->
@@ -571,7 +566,7 @@
           <circle cx="18" cy="18" r="5" stroke="#C8960A" stroke-width="1"/>
         </svg>
         <span class="tt-l">Hashtag</span>
-        <p class="tt-v"><a href="#" target="_blank" rel="noopener"></a></p>
+        <p class="tt-v"><a href="https://www.instagram.com/explore/tags/SwethaWedsRamanathan/" target="_blank" rel="noopener">#SwethaWedsRamanathan</a></p>
       </div>
 
       <div class="tt scroll-in" style="--sd:.15s">
@@ -701,24 +696,6 @@
 
 <!-- ══ SCRIPTS ════════════════════════════════════════════ -->
 <script src="assets/temple/script.js"></script>
-<script>
-/* Music toggle */
-(function(){
-  var btn  = document.getElementById('musicBtn');
-  var aud  = document.getElementById('bgMusic');
-  if(!btn || !aud) return;
-  btn.addEventListener('click', function(){
-    if(aud.paused){
-      aud.play().then(function(){btn.classList.add('playing');btn.textContent='🔇';})
-        .catch(function(){});
-    } else {
-      aud.pause();
-      btn.classList.remove('playing');
-      btn.textContent='🎵';
-    }
-  });
-})();
-</script>
 
 </body>
 </html>
