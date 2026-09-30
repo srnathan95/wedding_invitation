@@ -44,9 +44,9 @@
       "id": "mapillaippu",
       "name": "Mapillai alaipu & Ponn alaipu",
       "date": "19 Nov · 6:00 PM",
-      "venue": "Raja Marriage hall",
+      "venue": "Sri Raja Mahal",
       "description": "Mapillai alaipu and ponn alaipu with folk music.",
-      "mapsUrl": "https://maps.google.com/?q=Garden+Pavilion+Chennai",
+      "mapsUrl": "https://maps.app.goo.gl/diysMT95WS7pyVjy6",
       "icon": "assets/temple/icon-mehendi.png",
       "row": 1
     },
@@ -54,9 +54,9 @@
       "id": "kalyanam",
       "name": "Kalyanam",
       "date": "20 Nov · 9:00 AM",
-      "venue": "Raja Marriage hall",
+      "venue": "Sri Raja Mahal",
       "description": "The sacred Saptapadi — seven steps, one lifetime.",
-      "mapsUrl": "https://maps.google.com/?q=Grand+Mandapam+Chennai",
+      "mapsUrl": "https://maps.app.goo.gl/diysMT95WS7pyVjy6",
       "icon": "assets/temple/icon-shaadi.png",
       "hero": true,
       "row": 1
@@ -65,9 +65,9 @@
       "id": "reception",
       "name": "Reception",
       "date": "20 Nov · 6:30 PM",
-      "venue": "Raja Marriage hall",
+      "venue": "Sri Raja Mahal",
       "description": "Celebrate under the stars with a feast fit for royalty.",
-      "mapsUrl": "https://maps.google.com/?q=Grand+Ballroom+Chennai",
+      "mapsUrl": "https://maps.app.goo.gl/diysMT95WS7pyVjy6",
       "icon": "assets/temple/icon-reception.png",
       "row": 2
     },
@@ -75,9 +75,9 @@
       "id": "maruveedu",
       "name": "Maruveedu",
       "date": "21 Nov · 10:00 AM",
-      "venue": "Raja Marriage hall",
+      "venue": "Sri Raja Mahal",
       "description": "Thanksgiving for relatives and friends by Groom.",
-      "mapsUrl": "https://maps.google.com/?q=Grand+Ballroom+Chennai",
+      "mapsUrl": "https://maps.app.goo.gl/diysMT95WS7pyVjy6",
       "icon": "assets/temple/icon-reception.png",
       "row": 2
     }
@@ -85,14 +85,14 @@
 
   "thingsToKnow": {
     "dressCode": "Traditional / Ethnic",
-    "venue": "Raja Mahala\nTirunelveli",
+    "venue": "Sri Raja Mahal",
     "parking": "Available on-site"
   },
 
   "gallery": [
-    { "src": "assets/temple/photo1.jpg", "alt": "Swetha & Ramanathan" },
+    { "src": "assets/temple/photo1.jpeg", "alt": "Swetha & Ramanathan" },
     { "src": "assets/temple/photo2.jpg", "alt": "Swetha & Ramanathan" },
-    { "src": "assets/temple/photo3.jpg", "alt": "Swetha & Ramanathan" },
+    { "src": "assets/temple/photo3.jpeg", "alt": "Swetha & Ramanathan" },
     { "src": "assets/temple/photo4.jpg", "alt": "Swetha & Ramanathan" }
   ],
 
@@ -107,7 +107,7 @@
   },
 
   "music": {
-    "src": "",
+    "src": "assets/temple/music.mp3",
     "type": "audio/mpeg"
   }
 }
