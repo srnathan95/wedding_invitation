@@ -725,6 +725,13 @@ section{padding:80px 0}.hero-wrap,.hero-pin{padding:0!important}.container{max-w
 @media(max-width:480px){section{padding:64px 0}.container{padding:0 16px}.s-head{margin-bottom:40px}.sh-h{font-size:clamp(1.7rem,7vw,2.4rem)}.invite-card{padding:28px 16px}.tt-row{grid-template-columns:1fr 1fr;gap:10px}.tt{padding:20px 10px}.ev-float-stage{gap:48px;padding:12px 0 24px}.ev-node{padding:6px 8px 12px}.ev-name{font-size:.90rem}.st-stage{height:440px}.st-char{width:clamp(100px,24vw,150px)}.st-char-img{height:clamp(178px,38vh,258px)!important}.st-groom .st-char-img{height:clamp(214px,46vh,310px)!important}.rsvp-heading{font-size:clamp(1.8rem,7vw,2.6rem)}.rsvp-wa-inner{padding:15px 22px;font-size:.60rem}.ft-names{font-size:1.5rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;transition-duration:.01s!important}}
 
+/* ══ MUSIC TOGGLE ══ */
+.music-btn{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));right:20px;z-index:9999;width:36px;height:36px;border-radius:50%;border:none;padding:0;display:flex;align-items:center;justify-content:center;background:rgba(46,8,8,0.88);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);box-shadow:0 0 0 1px rgba(200,150,10,0.45),0 4px 16px rgba(0,0,0,.30);cursor:pointer;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;font-size:16px;line-height:1;color:var(--ivory)}
+.music-btn:hover{transform:scale(1.08)}
+.music-btn:active{transform:scale(0.92)}
+.music-btn.playing{box-shadow:0 0 0 1.5px rgba(200,150,10,0.80),0 0 14px rgba(200,150,10,.30),0 4px 16px rgba(0,0,0,.30)}
+@media(max-width:520px){.music-btn{width:32px;height:32px;right:12px;font-size:14px}}
+
 /* FAMILY */
 .i-fam{display:flex;align-items:flex-start;justify-content:center;gap:clamp(12px,4vw,32px);margin:14px 0 10px;text-align:center}
 .fam-side{flex:1;max-width:195px;display:flex;flex-direction:column;align-items:center;gap:8px}

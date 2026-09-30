@@ -104,5 +104,10 @@
     "body": "We have lit the kuthuvillakku, spread the kolam, and saved a seat for you in our mandapam. Come celebrate as we begin this sacred and joyful chapter of our lives.",
     "buttonText": "Yes, we will be there 🙏",
     "postscript": "You will be redirected to WhatsApp to confirm your attendance."
+  },
+
+  "music": {
+    "src": "assets/temple/music.mp3",
+    "type": "audio/mpeg"
   }
 }

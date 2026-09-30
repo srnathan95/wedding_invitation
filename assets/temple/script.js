@@ -760,6 +760,50 @@ function applyConfig(cfg){
   if(rsvp.postscript)setText('.rsvp-ps',rsvp.postscript);
 }
 
+/* ─── BACKGROUND MUSIC ─────────────────────────────── */
+(function initMusic(){
+  const btn=document.getElementById('musicBtn');
+  const aud=document.getElementById('bgMusic');
+  if(!btn||!aud) return;
+  let userMuted=false;
+
+  function setMutedUI(muted){
+    btn.classList.toggle('playing',!muted);
+    btn.setAttribute('aria-pressed',muted?'true':'false');
+    btn.setAttribute('aria-label',muted?'Unmute music':'Mute music');
+    btn.textContent=muted?'🔇':'🔊';
+  }
+
+  function start(){
+    if(userMuted) return Promise.resolve();
+    aud.muted=false;
+    setMutedUI(false);
+    return aud.play().catch(function(){});
+  }
+
+  function unlock(){
+    if(!userMuted) start();
+  }
+
+  setMutedUI(false);
+  start();
+  window.addEventListener('pointerdown',unlock,{passive:true});
+  window.addEventListener('touchstart',unlock,{passive:true});
+  window.addEventListener('keydown',unlock);
+
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    if(aud.paused){
+      userMuted=false;
+      start();
+      return;
+    }
+    userMuted=!aud.muted;
+    aud.muted=userMuted;
+    setMutedUI(userMuted);
+  });
+})();
+
 (function loadWeddingConfig(){
   fetch('wedding-config.json')
     .then(function(r){return r.json();})
