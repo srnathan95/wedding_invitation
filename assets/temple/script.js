@@ -781,15 +781,22 @@ function applyConfig(cfg){
     return aud.play().catch(function(){});
   }
 
+  let unlocked=false;
   function unlock(){
-    if(!userMuted) start();
+    if(unlocked||userMuted) return;
+    unlocked=true;
+    start();
+    window.removeEventListener('pointerdown',unlock);
+    window.removeEventListener('touchstart',unlock);
+    window.removeEventListener('keydown',unlock);
+    window.removeEventListener('scroll',unlock);
   }
 
   setMutedUI(false);
-  start();
   window.addEventListener('pointerdown',unlock,{passive:true});
   window.addEventListener('touchstart',unlock,{passive:true});
   window.addEventListener('keydown',unlock);
+  window.addEventListener('scroll',unlock,{passive:true});
 
   btn.addEventListener('click',function(e){
     e.stopPropagation();
