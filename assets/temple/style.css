@@ -496,16 +496,7 @@ section{position:relative;overflow:hidden;padding:100px 0}
 .invite-card.vis .i-bride{opacity:1;transform:translateY(0) scale(1);transition-delay:.12s}
 .invite-card.vis .i-amp{opacity:1;transform:scale(1) rotate(0deg);transition-delay:.32s}
 .invite-card.vis .i-groom{opacity:1;transform:translateY(0) scale(1);transition-delay:.52s}
-.i-fam{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;justify-items:center;margin:14px 0;font-family:var(--ff-b);font-weight:500;font-size:.77rem;line-height:2;color:rgba(232,200,144,.75)}
-.i-fam em{font-style:italic;font-weight:700;color:var(--blush);display:block;font-size:.86rem}
-.fam-side{display:flex;flex-direction:column;justify-content:space-between;width:100%;text-align:center}
-.fam-dot{color:var(--gold);align-self:center;font-size:.7rem;opacity:.75}
 .i-close{font-family:var(--ff-s);font-style:italic;font-weight:600;font-size:.83rem;color:rgba(248,242,228,.70);margin-top:12px}
-/* Family section text inside the card */
-.fam-parents{color:rgba(232,200,144,.85)}
-.fam-parents span{font-weight:700;color:rgba(232,200,144,1)}
-.fam-gp{color:rgba(232,200,144,.60)}
-.fam-gp em{color:var(--gold)}
 
 /* EVENTS — Change 23 */
 .s-events{background:#E8E0F4;padding:120px 0 160px}
