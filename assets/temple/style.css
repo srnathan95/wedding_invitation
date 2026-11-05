@@ -727,7 +727,7 @@ section{padding:80px 0}.hero-wrap,.hero-pin{padding:0!important}.container{max-w
 /* FAMILY */
 .i-fam{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(12px,4vw,32px);margin:14px 0 10px;text-align:center;align-items:stretch}
 .fam-side{display:flex;flex-direction:column;align-items:center}
-.fam-gp{flex:1;font-family:var(--ff-s);font-style:italic;font-weight:700;font-size:.85rem;color:rgba(46,8,8,.65);line-height:1.6;padding-bottom:6px;border-bottom:1px solid rgba(200,150,10,.18);width:100%}
+.fam-gp{margin-bottom:auto;font-family:var(--ff-s);font-style:italic;font-weight:700;font-size:.85rem;color:rgba(46,8,8,.65);line-height:1.6;padding-bottom:6px;border-bottom:1px solid rgba(200,150,10,.18);width:100%}
 .fam-gp em{font-style:italic;font-size:.64rem;display:block;color:var(--gold);margin-bottom:2px}
 .fam-parents{font-family:var(--ff-b);font-weight:600;font-size:.76rem;color:var(--deep);line-height:1.7}
 .fam-parents em{font-family:var(--ff-s);font-style:italic;font-size:.80rem;display:block;color:rgba(46,8,8,.50)}
