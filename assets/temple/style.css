@@ -496,8 +496,9 @@ section{position:relative;overflow:hidden;padding:100px 0}
 .invite-card.vis .i-bride{opacity:1;transform:translateY(0) scale(1);transition-delay:.12s}
 .invite-card.vis .i-amp{opacity:1;transform:scale(1) rotate(0deg);transition-delay:.32s}
 .invite-card.vis .i-groom{opacity:1;transform:translateY(0) scale(1);transition-delay:.52s}
-.i-fam{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin:14px 0;font-family:var(--ff-b);font-weight:500;font-size:.77rem;line-height:2;color:rgba(232,200,144,.75)}
+.i-fam{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;justify-items:center;margin:14px 0;font-family:var(--ff-b);font-weight:500;font-size:.77rem;line-height:2;color:rgba(232,200,144,.75)}
 .i-fam em{font-style:italic;font-weight:700;color:var(--blush);display:block;font-size:.86rem}
+.fam-side{display:flex;flex-direction:column;justify-content:space-between;width:100%;text-align:center}
 .fam-dot{color:var(--gold);align-self:center;font-size:.7rem;opacity:.75}
 .i-close{font-family:var(--ff-s);font-style:italic;font-weight:600;font-size:.83rem;color:rgba(248,242,228,.70);margin-top:12px}
 /* Family section text inside the card */
@@ -733,13 +734,13 @@ section{padding:80px 0}.hero-wrap,.hero-pin{padding:0!important}.container{max-w
 @media(max-width:520px){.music-btn{width:32px;height:32px;right:12px;font-size:14px}}
 
 /* FAMILY */
-.i-fam{display:flex;align-items:flex-start;justify-content:center;gap:clamp(12px,4vw,32px);margin:14px 0 10px;text-align:center}
-.fam-side{flex:1;max-width:195px;display:flex;flex-direction:column;align-items:center;gap:8px}
-.fam-gp{font-family:var(--ff-s);font-style:italic;font-weight:700;font-size:.85rem;color:rgba(46,8,8,.65);line-height:1.6;padding-bottom:6px;border-bottom:1px solid rgba(200,150,10,.18);width:100%}
+.i-fam{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(12px,4vw,32px);margin:14px 0 10px;text-align:center;align-items:stretch}
+.fam-side{display:flex;flex-direction:column;align-items:center}
+.fam-gp{flex:1;font-family:var(--ff-s);font-style:italic;font-weight:700;font-size:.85rem;color:rgba(46,8,8,.65);line-height:1.6;padding-bottom:6px;border-bottom:1px solid rgba(200,150,10,.18);width:100%}
 .fam-gp em{font-style:italic;font-size:.64rem;display:block;color:var(--gold);margin-bottom:2px}
 .fam-parents{font-family:var(--ff-b);font-weight:600;font-size:.76rem;color:var(--deep);line-height:1.7}
 .fam-parents em{font-family:var(--ff-s);font-style:italic;font-size:.80rem;display:block;color:rgba(46,8,8,.50)}
-.fam-dot{flex-shrink:0;font-size:.9rem;color:var(--gold);margin-top:32px;opacity:.70}
+.fam-dot{font-size:.9rem;color:var(--gold);opacity:.70;align-self:center}
 .fam-side:first-child .fam-gp,.fam-side:last-child .fam-gp{color:rgba(200,160,10,.85)}
 .fam-side:first-child .fam-parents,.fam-side:last-child .fam-parents{color:#FFD700}
 .fam-side:first-child .fam-parents em,.fam-side:last-child .fam-parents em{color:rgba(255,215,0,.65)}
